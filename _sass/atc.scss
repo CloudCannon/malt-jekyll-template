@@ -1,0 +1,88 @@
+/**
+* AddToCalendar style Icon
+* http://addtocalendar.com
+*/
+
+/* Base */
+
+.addtocalendar var {
+	display: none;
+}
+
+.addtocalendar img {
+width: 25px;
+position: relative;
+top: 7px;
+}
+
+.addtocalendar {
+	position: relative;
+	display: inline-block;
+	background: transparent!important;
+}
+
+.atcb-link {
+	display: block;
+	outline: none!important;
+	cursor: pointer;
+}
+
+.atcb-link:focus~ul,
+.atcb-link:active~ul,
+.atcb-list:hover {
+	display: inline-block;
+}
+
+.atcb-list {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 170px;
+	z-index: 900;
+	font-size: .8em;
+	text-shadow: none;
+}
+
+.atcb-list,
+.atcb-item {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background: rgba(255,255,255,.8);
+	border-radius: 3px;
+}
+
+.atcb-item {
+	float: none;
+	text-align: left;
+	padding: 5px 10px;
+}
+
+.atcb-item-link {
+	text-decoration: none;
+	outline: none;
+	display: block;
+	color: #72a7f5;
+}
+
+.atcb-item.hover,
+.atcb-item:hover {
+	position: relative;
+	z-index: 900;
+	cursor: pointer;
+	text-decoration: underline;
+	outline: none;
+}
+
+
+/* Icon */
+
+.atc-style-button-icon .atcb-link,
+.atc-style-button-icon .atcb-link:hover,
+.atc-style-button-icon .atcb-link:active,
+.atc-style-button-icon .atcb-link:focus {
+	text-decoration: none;
+	outline: none;
+	padding: 2px 2px;
+}

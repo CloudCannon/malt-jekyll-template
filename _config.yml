@@ -1,0 +1,55 @@
+# ----
+# Site
+
+title: Malt Template
+url: "https://whispering-boat.cloudvent.net"
+baseurl:
+google_analytics_key:
+google_maps_javascript_api_key:
+eventbrite_embed: '<div style="width:100%; text-align:left;"><iframe src="//eventbrite.com/tickets-external?eid=29292309085&ref=etckt" frameborder="0" height="285" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:12px; padding:10px 0 5px; margin:2px; width:100%; text-align:left;" ><a class="powered-by-eb" style="color: #ADB0B6; text-decoration: none;" target="_blank" href="http://www.eventbrite.com/">Powered by Eventbrite</a></div></div>'
+timezone: Etc/UTC
+
+# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+logo: /siteicon.png
+description: Event marketing template for Jekyll.
+author:
+  name:
+  email:
+  twitter: # twitter username without the @ symbol
+social:
+  name: Malt Template
+  links:
+    - https://github.com/CloudCannon/malt-jekyll-template
+
+# -----
+# Build
+
+permalink: pretty
+
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENCE
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: page
+
+# -----------
+# CloudCannon
+
+_comments:
+  background_image: Image shown behind the content.
+  map: Update the map location and display settings.
+  latitude: Coordinates for the center marker on the map.
+  longitude: Coordinates for the center marker on the map.
+  zoom: The zoom level for the map.
+  timezone: The timezone the event dates are listed in
