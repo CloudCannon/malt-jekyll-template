@@ -4,76 +4,83 @@ start_datetime: 2016-11-10 9:00:00
 end_datetime: 2016-11-10 18:00:00
 timezone: America/Los_Angeles
 description: A fun filled day with friends and beer.
-background_image: /images/2015/12.jpeg
+background_image: /uploads/2015/12.jpeg
 map:
   address: 1 Market Street, San Francisco
   zoom: 16
   latitude: 37.7938462
   longitude: -122.3970253
 featured_brews:
-  - image: /images/beers/label-1.png
+  - label_image: /uploads/beers/label-1.png
     title: Count Chocula
     link: #
-  - image: /images/beers/label-2.png
+  - label_image: /uploads/beers/label-2.png
     title: Professor Pope
     link: #
-  - image: /images/beers/label-3.png
+  - label_image: /uploads/beers/label-3.png
     title: Blazing Dog
     link: #
-  - image: /images/beers/label-4.png
+  - label_image: /uploads/beers/label-4.png
     title: Extravagant Bartender
     link: #
-  - image: /images/beers/label-5.png
+  - label_image: /uploads/beers/label-5.png
     title: Brain Sour
     link: #
-  - image: /images/beers/label-6.png
+  - label_image: /uploads/beers/label-6.png
     title: Chinchilla
     link: #
-  - image: /images/beers/label-7.png
+  - label_image: /uploads/beers/label-7.png
     title: Frosty Boots
     link: #
-  - image: /images/beers/label-8.png
+  - label_image: /uploads/beers/label-8.png
     title: Grape Pirate
     link: #
-  - image: /images/beers/label-9.png
+  - label_image: /uploads/beers/label-9.png
     title: Blue Bus
     link: #
-  - image: /images/beers/label-10.png
+  - label_image: /uploads/beers/label-10.png
     title: Orange Tank
     link: #
-  - image: /images/beers/label-11.png
+  - label_image: /uploads/beers/label-11.png
     title: Kangaroo
     link: #
-  - image: /images/beers/label-12.png
+  - label_image: /uploads/beers/label-12.png
     title: CloudCannon
     link: #
 photos:
-  - image: /images/2015/1.jpeg
+  - image: /uploads/2015/1.jpeg
     title: Malt Festival 1
-  - image: /images/2015/2.jpeg
+  - image: /uploads/2015/2.jpeg
     title: Malt Festival 2
-  - image: /images/2015/3.jpeg
+  - image: /uploads/2015/3.jpeg
     title: Malt Festival 3
-  - image: /images/2015/4.jpeg
+  - image: /uploads/2015/4.jpeg
     title: Malt Festival 4
-  - image: /images/2015/5.jpeg
+  - image: /uploads/2015/5.jpeg
     title: Malt Festival 5
-  - image: /images/2015/6.jpeg
+  - image: /uploads/2015/6.jpeg
     title: Malt Festival 6
-  - image: /images/2015/7.jpeg
+  - image: /uploads/2015/7.jpeg
     title: Malt Festival 7
-  - image: /images/2015/8.jpeg
+  - image: /uploads/2015/8.jpeg
     title: Malt Festival 8
-  - image: /images/2015/9.jpeg
+  - image: /uploads/2015/9.jpeg
     title: Malt Festival 9
-  - image: /images/2015/10.jpeg
+  - image: /uploads/2015/10.jpeg
     title: Malt Festival 10
-  - image: /images/2015/11.jpeg
+  - image: /uploads/2015/11.jpeg
     title: Malt Festival 11
-  - image: /images/2015/12.jpeg
+  - image: /uploads/2015/12.jpeg
     title: Malt Festival 12
-  - image: /images/2015/13.jpeg
+  - image: /uploads/2015/13.jpeg
     title: Malt Festival 13
+_options:
+  label_image:
+    width: 400
+    height: 400
+  image:
+    width: 600
+    height: 1200
 ---
 
 <p class="success">Message sent, we'll be in touch soon.</p>
@@ -99,7 +106,7 @@ photos:
 	{% for feature in page.featured_brews %}
 		<a href="{% include relative-src.html src=feature.link %}">
 			<div class="inner-wrapper">
-				<img src="{% include relative-src.html src=feature.image %}" alt="{{ feature.title }}">
+				<img src="{% include relative-src.html src=feature.label_image %}" alt="{{ feature.title }}">
 			</div>
 			<p class="caption">{{ feature.title }}</p>
 		</a>
@@ -154,19 +161,12 @@ photos:
 
 	function initMap() {
 		var myOptions = {
-			scrollwheel: false,
-			draggable: false,
-			panControl: false,
-			disableDefaultUI: true,
 			styles: [{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#f7f1df"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#d0e3b4"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fbd3da"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#bde6ab"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffe15f"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#efd151"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"color":"#cfb2db"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#a2daf2"}]}],
 			zoom: window.mapData.zoom,
-			maxZoom: window.mapData.zoom,
-			minZoom: window.mapData.zoom,
-			center: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude),
-			mapTypeId: google.maps.MapTypeId.ROADMAP
+			center: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude)
 		};
-		map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
-		marker = new google.maps.Marker({
+		var map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+		var marker = new google.maps.Marker({
 			map: map,
 			position: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude)
 		});
