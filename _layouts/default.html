@@ -5,15 +5,6 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
-			<script>
-				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-				ga('create', '{{ site.google_analytics_key }}', 'auto');
-				ga('send', 'pageview');
-			</script>
-			<script async src='https://www.google-analytics.com/analytics.js'></script>
-		{% endif %}
-
 		{% seo %}
 
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Abel">
@@ -29,6 +20,15 @@
 					background-image: url({% include relative-src.html src=page.background_image %});"
 				}
 			</style>
+		{% endif %}
+
+		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
+			<script>
+				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+				ga('create', '{{ site.google_analytics_key }}', 'auto');
+				ga('send', 'pageview');
+			</script>
+			<script async src='https://www.google-analytics.com/analytics.js'></script>
 		{% endif %}
 	</head>
 
